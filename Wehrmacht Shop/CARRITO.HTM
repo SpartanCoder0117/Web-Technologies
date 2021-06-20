@@ -1,0 +1,248 @@
+<html>
+<head>
+<title>Carrito de Compra</title>
+<link rel="stylesheet" href="tank.css" type="text/css" media="screen"/>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta name="author" content="">
+<meta name="title" content="">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="distribution" content="">
+<meta name="resource-type" content="">
+<meta name="revisit" content="">
+<meta name="robots" content="">
+<style type="text/css">
+.body {
+font-family: Arial;
+font-size: 12pt;
+font-style: normal;
+font-weight: normal;
+font-variant: normal;
+color: #ffffff;
+}
+
+.td {
+font-family: Arial;
+font-size: 12pt;
+font-style: normal;
+line-height: normal;
+font-weight: normal;
+font-variant: normal;
+color: #ffffff;
+background: none;
+}
+
+
+</style>
+<script LANGUAGE="JavaScript">
+//<!--
+function CargarFoto(img, ancho, alto){
+  derecha=(screen.width-ancho)/2;
+  arriba=(screen.height-alto)/2;
+  string="toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=1,width="+ancho+",height="+alto+",left="+derecha+",top="+arriba+"";
+  fin=window.open(img,"",string);
+}
+// -->
+</script>
+</head>
+<body bgcolor="#C0C0C0" link="#32468D" vlink="#800080" class="body">
+<SCRIPT LANGUAGE="JavaScript">
+
+	function buyItem(newItem, newPrice, newQuantity) {
+		if (newQuantity <= 0) {
+			rc = alert('La cantidad ingresada es incorrecta');
+			return false;
+		}
+		if (confirm('�Agregar '+newQuantity+' '+newItem+' al carrito?')) {
+			index = document.cookie.indexOf("TheBasket");
+			countbegin = (document.cookie.indexOf("=", index) + 1);
+        		countend = document.cookie.indexOf(";", index);
+	        	if (countend == -1) {
+        	    		countend = document.cookie.length;
+        		}
+	                document.cookie="TheBasket="+document.cookie.substring(countbegin, countend)+"["+newItem+","+newPrice+"#"+newQuantity+"]";
+		}
+		return true;
+	}
+
+	function resetShoppingBasket() {
+		index = document.cookie.indexOf("TheBasket");
+		document.cookie="TheBasket=.";
+	}
+</SCRIPT>
+<center>
+  <table border="0" cellpadding="0" cellspacing="0" width="640" class="body">
+    <tr> 
+      <td width="50%"><big><big>Carrito de Compra</big></big></td>
+      <td width="70%" align="right">[ Carrito de Compra | <a href="estado.htm">Estado</a> | <a href="formulario.htm">Formulario</a> | <a href="Proyecto.html">Inicio</a> ]</td>
+    </tr>
+    <tr> 
+      <td width="100%" colspan="2">
+        <hr size="1" color="#000000">
+      </td>
+    </tr>
+    <tr> 
+      <td width="100%" colspan="2"></td>
+    </tr>
+  </table>
+  <form NAME="itemsform">
+    <table border="1" cellspacing="0" width="640" bgcolor="#E0E0E0" bordercolor="#FFFFFF" class="td">
+      
+      <tr> 
+        <td width="120" valign="top" align="center"><a href="javascript:CargarFoto('imagenes/Pz1.jpg','820','411')"><img src="thumbnails/Pz1.jpg" border="0"></a></td>
+        <td width="340" valign="top"><a href="javascript:CargarFoto('imagenes/Pz1.jpg','820','411')"><strong>Panzer I</strong></a><br>
+          <small>Tanque ligero</small></td>
+        <td width="60" align="center" valign="top">400</td>
+        <td width="50" valign="top" align="center">
+          <input TYPE="value" NAME="agregar1" VALUE="1"
+      SIZE="3">
+        </td>
+        <td width="70" valign="top">
+          <input TYPE="button" NAME="cbtadd" VALUE="Agregar"
+      onclick="buyItem('Panzer I','400', document.itemsform.agregar1.value)">
+        </td>
+      </tr>
+      <tr> 
+        <td width="120" valign="top" align="center"><a href="javascript:CargarFoto('imagenes/Pz2.jpg','720','502')"><img src="thumbnails/Pz2.jpg" border="0"></a></td>
+        <td width="340" valign="top"><a href="javascript:CargarFoto('imagenes/Pz2.jpg','720','502')"><strong>Panzer II</strong></a><br>
+          <small>Tanque ligero</small></td>
+        <td width="60" align="center" valign="top">500</td>
+        <td width="50" valign="top" align="center">
+          <input TYPE="value" NAME="agregar2" VALUE="1"
+      SIZE="3">
+        </td>
+        <td width="70" valign="top">
+          <input TYPE="button" NAME="cbtadd" VALUE="Agregar"
+      onclick="buyItem('Panzer II','500', document.itemsform.agregar2.value)">
+        </td>
+      </tr>
+      <tr> 
+        <td width="120" valign="top" align="center"><a href="javascript:CargarFoto('imagenes/Pz3.jpg','520','405')"><img src="thumbnails/Pz3.jpg" border="0"></a></td>
+        <td width="340" valign="top"><a href="javascript:CargarFoto('imagenes/Pz3.jpg','520','405')"><strong>Panzer III</strong></a><br>
+          <small>Tanque ligero</small></td>
+        <td width="60" align="center" valign="top">550</td>
+        <td width="50" valign="top" align="center">
+          <input TYPE="value" NAME="agregar3" VALUE="1"
+      SIZE="3">
+        </td>
+        <td width="70" valign="top">
+          <input TYPE="button" NAME="cbtadd" VALUE="Agregar"
+      onclick="buyItem('Panzer III','550', document.itemsform.agregar3.value)">
+        </td>
+      </tr>
+      <tr> 
+        <td width="120" valign="top" align="center"><a href="javascript:CargarFoto('imagenes/Pz4.jpg','810','530')"><img src="thumbnails/Pz4.jpg" border="0"></a></td>
+        <td width="340" valign="top"><a href="javascript:CargarFoto('imagenes/Pz4.jpg','810','530')"><strong>Panzer IV</strong></a><br>
+          <small>Tanque mediano</small></td>
+        <td width="60" align="center" valign="top">650</td>
+        <td width="50" valign="top" align="center">
+          <input TYPE="value" NAME="agregar4" VALUE="1"
+      SIZE="3">
+        </td>
+        <td width="70" valign="top">
+          <input TYPE="button" NAME="cbtadd" VALUE="Agregar"
+      onclick="buyItem('Panzer IV','650', document.itemsform.agregar4.value)">
+        </td>
+      </tr>
+      <tr> 
+        <td width="120" valign="top" align="center"><a href="javascript:CargarFoto('imagenes/Pz5.jpg','720','422')"><img src="thumbnails/Pz5.jpg" border="0"></a></td>
+        <td width="340" valign="top"><a href="javascript:CargarFoto('imagenes/Pz5.jpg','720','422')"><strong>Panther</strong></a><br>
+          <small>Tanque mediano</small></td>
+        <td width="60" align="center" valign="top">700</td>
+        <td width="50" valign="top" align="center">
+          <input TYPE="value" NAME="agregar5" VALUE="1"
+      SIZE="3">
+        </td>
+        <td width="70" valign="top">
+          <input TYPE="button" NAME="cbtadd" VALUE="Agregar"
+      onclick="buyItem('Panther','700', document.itemsform.agregar5.value)">
+        </td>
+      </tr>
+      <tr> 
+        <td width="120" valign="top" align="center"><a href="javascript:CargarFoto('imagenes/Pz6.jpg','820','630')"><img src="thumbnails/Pz6.jpg" border="0"></a></td>
+        <td width="340" valign="top"><a href="javascript:CargarFoto('imagenes/Pz6.jpg','820','630')"><strong>Tiger I</strong></a><br>
+          <small>Tanque pesado</small></td>
+        <td width="60" align="center" valign="top">1000</td>
+        <td width="50" valign="top" align="center">
+          <input TYPE="value" NAME="agregar6" VALUE="1"
+      SIZE="3">
+        </td>
+        <td width="70" valign="top">
+          <input TYPE="button" NAME="cbtadd" VALUE="Agregar"
+      onclick="buyItem('Tiger I','1000', document.itemsform.agregar6.value)">
+        </td>
+      </tr>
+      <tr> 
+        <td width="120" valign="top" align="center"><a href="javascript:CargarFoto('imagenes/Pz6B.jpg','1020','436')"><img src="thumbnails/Pz6B.jpg" border="0"></a></td>
+        <td width="340" valign="top"><a href="javascript:CargarFoto('imagenes/Pz6B.jpg','1020','436')"><strong>Tiger II</strong></a><br>
+          <small>Tanque pesado</small></td>
+        <td width="60" align="center" valign="top">1500</td>
+        <td width="50" valign="top" align="center">
+          <input TYPE="value" NAME="agregar7" VALUE="1"
+      SIZE="3">
+        </td>
+        <td width="70" valign="top">
+          <input TYPE="button" NAME="cbtadd" VALUE="Agregar"
+      onclick="buyItem('Tiger II','1500', document.itemsform.agregar7.value)">
+        </td>
+      </tr>
+      <tr> 
+        <td width="120" valign="top" align="center"><a href="javascript:CargarFoto('imagenes/2.jpg','820','593')"><img src="thumbnails/2.jpg" border="0"></a></td>
+        <td width="340" valign="top"><a href="javascript:CargarFoto('imagenes/2.jpg','820','593')"><strong>SU - 100</strong></a><br>
+          <small>Cazatanques</small></td>
+        <td width="60" align="center" valign="top">750</td>
+        <td width="50" valign="top" align="center">
+          <input TYPE="value" NAME="agregar8" VALUE="1"
+      SIZE="3">
+        </td>
+        <td width="70" valign="top">
+          <input TYPE="button" NAME="cbtadd" VALUE="Agregar"
+      onclick="buyItem('SU - 100','750', document.itemsform.agregar8.value)">
+        </td>
+      </tr>
+      <tr> 
+        <td width="120" valign="top" align="center"><a href="javascript:CargarFoto('imagenes/5.jpg','660','545')"><img src="thumbnails/5.jpg" border="0"></a></td>
+        <td width="340" valign="top"><a href="javascript:CargarFoto('imagenes/5.jpg','660','545')"><strong>Stuka</strong></a><br>
+          <small>Avion de combate</small></td>
+        <td width="60" align="center" valign="top">1400</td>
+        <td width="50" valign="top" align="center">
+          <input TYPE="value" NAME="agregar9" VALUE="1"
+      SIZE="3">
+        </td>
+        <td width="70" valign="top">
+          <input TYPE="button" NAME="cbtadd" VALUE="Agregar"
+      onclick="buyItem('Stuka','1400', document.itemsform.agregar9.value)">
+        </td>
+      </tr>
+      <tr> 
+        <td width="120" valign="top" align="center"><a href="javascript:CargarFoto('imagenes/3.jpg','720','468')"><img src="thumbnails/3.jpg" border="0"></a></td>
+        <td width="340" valign="top"><a href="javascript:CargarFoto('imagenes/3.jpg','720','468')"><strong>Churchill Mk 3</strong></a><br>
+          <small>Tanque pesado</small></td>
+        <td width="60" align="center" valign="top">990</td>
+        <td width="50" valign="top" align="center">
+          <input TYPE="value" NAME="agregar10" VALUE="1"
+      SIZE="3">
+        </td>
+        <td width="70" valign="top">
+          <input TYPE="button" NAME="cbtadd" VALUE="Agregar"
+      onclick="buyItem('Churchill Mk 3','990', document.itemsform.agregar10.value)">
+        </td>
+      </tr>
+    </table>
+  </form>
+  <table border="0" cellpadding="0" cellspacing="0" width="640" class="body">
+    <tr> 
+      <td width="100%" colspan="2">
+        <hr size="1" color="#000000">
+      </td>
+    </tr>
+    <tr> 
+    <tr> 
+      <td width="50%"></td>
+      <td width="50%" align="right">P&aacute;gina [<a href="carrito.htm">1</a>]</td>
+    </tr>
+  </table>
+</center>
+</body>
+</html>
+

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Funciones JQuery</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js?ver=1.4.0">
+		</script>
+	</head>
+	<body>
+		<div>
+		<button id="ocultar">OCULTAR</button>
+		<button id="mostrar">MOSTRAR</button>
+		<button id="animacion">ANIMACIÓN</button>
+		</div><br>
+		<div>
+			<img id="imag" src="secret.jpg" alt="" width="200" height="246">
+			
+			
+			
+		</div>
+		<button id="toogle">TOGGLE</button>Para desvanecer la imagen click en ella
+		<div>
+			<img id="imag2" src="confu.jpg" alt="" width="200" height="246">
+			
+			
+			
+		</div><br>
+		<script>
+			$("#ocultar" ).click(function() {
+				$( "#imag" ).hide( "slow", function() {
+					alert( "Función '.hide' realizada" );
+  				});
+			});
+			$("#mostrar" ).click(function() {
+				$( "#imag" ).show( "slow", function() {
+					alert( "Función '.show' realizada" );
+  				});
+			});
+			$("#toogle" ).click(function() {
+				$( "#imag2" ).toggle( function() {
+					
+
+					alert( "Función '.toggle' realizada" );
+  				});
+			});
+			$("#imag2" ).click(function() {
+				$( "#imag2" ).fadeOut( function() {
+					
+
+					alert( "Función '.fadeOut' realizada" );
+  				});
+			});
+			$("#animacion" ).click(function() {
+				$("#imag").animate({
+						opacity: 0.5,
+						width: "50%",
+						hight: "50%",
+					},2000,function() {
+					
+
+					alert( "Función '.animate' realizada" );
+  				});
+				});
+
+		</script>
+
+	</body>
+</html>

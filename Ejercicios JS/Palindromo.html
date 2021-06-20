@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+		<head>
+			<meta charset="utf-8">
+			<title>Palindromo</title>
+			<script>
+				var cadena;
+				cadena=prompt('Ingrese la cadena:');
+				document.writeln("<h1>LA CADENA ES:<h1><h2> "+cadena+"<br></h2>");
+				//convertimos la cadena en un array
+				var letrasEspacios = cadena.split("");
+				// Eliminar los espacios en blanco
+				var cadenaSinEspacios = "";
+				// i es cada uno de los elementos en la cedena
+				for(i in letrasEspacios) {
+					if(letrasEspacios[i] != " ") {
+						cadenaSinEspacios += letrasEspacios[i];
+					}
+				}
+				var letras = cadenaSinEspacios.split("");
+				//invertimos la cadena resultante con la funcion reverse()
+				var letrasReves = cadenaSinEspacios.split("").reverse();
+				//comparamos ambas
+				var iguales = true;
+				for(i in letras) {
+					if(letras[i] != letrasReves[i]) {
+						iguales = false;
+					}
+				}
+				document.writeln("Los elementos de la cadena en el orden serian  "+letras+". <br>");
+				document.writeln("Los elementos de nuestra cadena inversa serian "+letrasReves+". <br>");
+				if(iguales) {
+					document.writeln("<h3>"+cadena+". Es palindromo</h3>");
+				}
+				else {
+					document.writeln("<h3>"+cadena+". No es palindromo</h3>");
+				}							
+			</script>
+		</head>	
+</html>

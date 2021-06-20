@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+<title>Foto</title>
+</head>
+<body>
+<canvas id="texto" width="230" height="100"
+                style="border: 1px solid black;">
+</canvas>
+<script>
+var ca=document.getElementById("texto");
+var co=ca.getContext("2d");
+co.fillStyle="red"
+co.font="italic 24px serif";
+co.textBaseline="top";
+co.fillText("canvas HTML5",0,0);
+co.font="bold  30px  sans-serif"
+co.textAlign="center";
+co.lineWidth=2;
+co.strokeStyle="navy";
+co.strokeText("canvas HTML5",120,60);
+</script>
+</body>
+</html>

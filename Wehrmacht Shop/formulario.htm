@@ -1,0 +1,228 @@
+<html>
+
+<head>
+	<title>Formulario</title>
+	<link rel="stylesheet" href="tank.css" type="text/css" media="screen" />
+	<style type="text/css">
+		.body {
+			font-family: Arial;
+			font-size: 12pt;
+			font-style: normal;
+			font-weight: normal;
+			font-variant: normal;
+			color: #ffffff;
+		}
+
+		.td {
+			font-family: Arial;
+			font-size: 12pt;
+			font-style: normal;
+			line-height: normal;
+			font-weight: normal;
+			font-variant: normal;
+			color: #ffffff;
+			background: none;
+		}
+	</style>
+	<SCRIPT LANGUAGE="JavaScript">
+		//<!--
+		function Enviar(form) {
+			for (i = 0; i < form.elements.length; i++) {
+				if (form.elements[i].type == "text" && form.elements[i].value == "") {
+					alert("Por favor complete todos los campos del formulario"); form.elements[i].focus();
+					return false;
+				}
+			}
+			form.submit();
+		}
+// -->
+	</SCRIPT>
+</head>
+
+<body bgcolor="#C0C0C0" link="#32468D" vlink="#800080" class="body">
+	<SCRIPT LANGUAGE="JavaScript">
+
+		function alterError(value) {
+			if (value <= 0.99) {
+				newPounds = '0';
+			} else {
+				newPounds = parseInt(value);
+			}
+			newPence = parseInt((value + .0008 - newPounds) * 100);
+			if (eval(newPence) <= 9) newPence = '0' + newPence;
+			newString = newPounds + '.' + newPence;
+			return (newString);
+		}
+
+		function showItems() {
+			index = document.cookie.indexOf("TheBasket");
+			countbegin = (document.cookie.indexOf("=", index) + 1);
+			countend = document.cookie.indexOf(";", index);
+			if (countend == -1) {
+				countend = document.cookie.length;
+			}
+			fulllist = document.cookie.substring(countbegin, countend);
+			totprice = 0;
+
+			itemlist = 0;
+			for (var i = 0; i <= fulllist.length; i++) {
+				if (fulllist.substring(i, i + 1) == '[') {
+					itemstart = i + 1;
+				} else if (fulllist.substring(i, i + 1) == ']') {
+					itemend = i;
+					thequantity = fulllist.substring(itemstart, itemend);
+					itemtotal = 0;
+					itemtotal = (eval(theprice * thequantity));
+					temptotal = itemtotal * 100;
+					var tax = itemtotal / 100 * (0 - 0);
+					tax = Math.floor(tax * 100) / 100
+					totprice = totprice + itemtotal + tax;
+					itemlist = itemlist + 1;
+					document.writeln('<INPUT TYPE="hidden" NAME="Producto' + itemlist + '" VALUE="' + theitem + '" SIZE="40">');
+					document.writeln('<INPUT TYPE="hidden" NAME="Cantidad' + itemlist + '" VALUE="' + thequantity + '" SIZE="40">')
+					document.writeln('<INPUT TYPE="hidden" NAME="ProductoTotal' + itemlist + '" VALUE="' + alterError(itemtotal) + '" SIZE="40">');
+				} else if (fulllist.substring(i, i + 1) == ',') {
+					theitem = fulllist.substring(itemstart, i);
+					itemstart = i + 1;
+				} else if (fulllist.substring(i, i + 1) == '#') {
+					theprice = fulllist.substring(itemstart, i);
+					itemstart = i + 1;
+				}
+			}
+
+			document.writeln('<INPUT TYPE="hidden" NAME="Total" VALUE="' + alterError(totprice) + '" SIZE="40">');
+
+		}
+		function Total() {
+			document.writeln(alterError(totprice));
+		}
+
+	</SCRIPT>
+	<center>
+		<table border="0" cellpadding="0" cellspacing="0" width="640" class="body">
+			<tr>
+				<td width="50%">
+					<big>
+						<big>Formulario</big>
+					</big>
+				</td>
+				<td width="50%" align="right">[
+					<a href="carrito.htm">Carrito de Compra</a> |
+					<a href="estado.htm">Estado</a> | Formulario |
+					<a href="Proyecto.html">Inicio</a> ]</td>
+			</tr>
+			<tr>
+				<td width="100%" colspan="2">
+					<hr size="1" color="#000000">
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" colspan="2"></td>
+			</tr>
+		</table>
+
+		<FORM method="post" action="https://www.paypal.com/mx/home" target="_top">
+
+			<input type=hidden name="recipient" value="jmaciasc0117@outlook.com">
+			<input type=hidden name="subject" value="Cibertienda - Orden de Compra">
+			<input type=hidden name="redirect" value="https://www.paypal.com/mx/home">
+			<input type=hidden name="env_report" value="REMOTE_HOST,REMOTE_ADDR,HTTP_USER_AGENT">
+			<!--REMOTE_HOST,REMOTE_ADDR,HTTP_USER_AGENT-->
+			<table cols="2" width="370" class="body">
+				<td width="130"></td>
+				<td width="270">
+				</td>
+				</tr>
+				<tr>
+					<td>Nombre</td>
+					<td>
+						<input type="text" name="nombre" size=34>
+					</td>
+				</tr>
+				<tr>
+					<td>Apellido</td>
+					<td>
+						<input type="text" name="apellido" size=34>
+					</td>
+				</tr>
+				<tr>
+					<td>Domicilio</td>
+					<td>
+						<input type="text" name="domicilio" size=34>
+					</td>
+				</tr>
+				<tr>
+					<td>Ciudad</td>
+					<td>
+						<input type="text" name="ciudad" size=34>
+					</td>
+				</tr>
+				<tr>
+					<td>Provincia</td>
+					<td>
+						<input type="text" name="provincia" size=34>
+					</td>
+				</tr>
+				<tr>
+					<td>Codigo Postal</td>
+					<td>
+						<input type="text" name="cp" size=34>
+					</td>
+				</tr>
+				<tr>
+					<td>Pais</td>
+					<td>
+						<input type="text" name="pais" size=34>
+					</td>
+				</tr>
+				<tr>
+					<td>E-mail</td>
+					<td>
+						<input type="text" name="email" size=34>
+					</td>
+				</tr>
+				<tr>
+					<td>Telefono</td>
+					<td>
+						<input type="text" name="telefono" size=34>
+					</td>
+				</tr>
+				<tr>
+					<td>Fax</td>
+					<td>
+						<input type="text" name="fax" size=34>
+					</td>
+				</tr>
+
+				<SCRIPT LANGUAGE="JavaScript">
+					showItems();
+				</SCRIPT>
+				<tr>
+					<td>Total:</td>
+					<td>$
+						<SCRIPT LANGUAGE="JavaScript">Total()</SCRIPT>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<br>
+						<br>
+					</td>
+					<td>
+						<!--input type="button" value="Enviar" onClick="return Enviar(this.form)"-->
+						<input type="reset" value="Restablecer">
+					</td>
+				</tr>
+			</table>
+			<a title="paypal" href="https://www.paypal.com/mx/home">
+				<p><h2 style = "color: white;">Pagar con:</h2></p>
+				<img src="pay.png" alt="paypal" width="200" height="100" />
+			</a>
+
+		</form>
+
+	</center>
+</body>
+
+</html>

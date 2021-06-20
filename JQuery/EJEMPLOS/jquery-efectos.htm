@@ -1,0 +1,35 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>
+      Efectos de jQuery
+    </title>
+<script src="jquery.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+	$(document).ready(function (){
+		//Aqui asignamos el click al elemento <a>
+		$("a").click(function (){
+			$("div").hide("slow");
+			$("div").show("slow");
+			$("div").slideUp("slow");
+			$("div").slideDown("slow");
+			$("div").fadeOut("slow");
+			$("div").fadeIn("slow");
+			$("div").animate({width:200, height:200}, "slow");
+			$("div").animate({top:60, left:100}, "slow");
+			$("div").animate({width:300, height:300}, "slow");
+			$("div").animate({top:20, left:50}, "slow");
+			$("div").animate({width:100, height:100}, "slow");
+			$("div").animate({top:0, left:0}, "slow");
+			$("div").animate({width:400, height:400}, "slow");
+		});
+	});
+</script>
+
+  </head>
+  <body>
+	<div style="width:400px;height:400px;background-color:#FC0;position:relative;">
+    <a href="#" class="algo">Presioname!</a>
+	</div>
+  </body>
+</html>

@@ -1,0 +1,180 @@
+<html>
+<head></head>
+<title>E2</title>
+<body>
+	<div id = "circulo" class = "web">
+	<canvas id = "Dibujar" width = "500" height = "500" style = "border: 5px solid black;">
+	</canvas>
+	<script>
+	var opcion = prompt("Ingrese la opcion que desee: 1)Grande 2)Mediano 3)Chico");
+	
+	if(opcion==1)
+	{
+	var canvas = document.getElementById("Dibujar");
+	var contexto = canvas.getContext("2d");
+	var rep = prompt("Ingrese el numero de iteraciones:");
+	
+	var x1 = 500;
+	var y1 = 500;
+	
+
+	
+	var x2 = 150; 
+	var y2 = 250; 
+	var aux1 = 175;
+	var aux2 = 125;
+	var tam1 = 500;
+	var tam2 = 700;
+	var tam3 = 350;
+	var tam4 = 500;
+	for(var i=1; i<=rep; i++)
+	{
+		if(i%2!= 0)
+		{
+		contexto.beginPath();
+			contexto.arc(x1, y1, tam1, 0, Math.PI*2);
+			contexto.fillStyle = "red";
+			contexto.fill();
+		contexto.beginPath();
+			contexto.rect(x2,x2,tam2,tam2);
+			contexto.fillStyle = "black";
+			contexto.fill();
+		tam1 = tam1/2;
+		tam2 = tam2/2;
+		x2 = x2+aux1;
+		aux1 = aux1/2;
+		
+		}
+		else
+		{
+		contexto.beginPath();
+			contexto.arc(x1,y1, tam3, 0, Math.PI*2);
+			contexto.fillStyle = "red";
+			contexto.fill();
+		contexto.beginPath();
+			contexto.rect(y2,y2,tam4,tam4);
+			contexto.fillStyle = "black";
+			contexto.fill();
+		tam3 = tam3/2;
+		tam4 = tam4/2;
+		y2 = y2+aux2;
+		aux2 = aux2/2;
+		}
+	}	
+	}
+
+	
+	if(opcion==2)
+	{
+	var canvas = document.getElementById("Dibujar");
+	var contexto = canvas.getContext("2d");
+	var rep = prompt("Ingres el numero de iteraciones ");
+	
+	var x1 = 500/2;
+	var y1 = 500/2;
+	
+
+	
+	var x2 = 150/2; 
+	var y2 = 250/2; 
+	var aux1 = 175/2;
+	var aux2 = 125/2;
+	var tam1 = 500/2;
+	var tam2 = 700/2;
+	var tam3 = 350/2;
+	var tam4 = 500/2;
+	for(var i=1; i<=rep; i++)
+	{
+		if(i%2!= 0)
+		{
+		contexto.beginPath();
+			contexto.arc(x1, y1, tam1, 0, Math.PI*2);
+			contexto.fillStyle = "red";
+			contexto.fill();
+		contexto.beginPath();
+			contexto.rect(x2,x2,tam2,tam2);
+			contexto.fillStyle = "black";
+			contexto.fill();
+		tam1 = (tam1)/2;
+		tam2 = (tam2)/2;
+		x2 = (x2)+(aux1);
+		aux1 = (aux1)/2;
+		
+		}
+		else
+		{
+		contexto.beginPath();
+			contexto.arc(x1, y1, tam3, 0, Math.PI*2);
+			contexto.fillStyle = "red";
+			contexto.fill();
+		contexto.beginPath();
+			contexto.rect(y2,y2,tam4,tam4);
+			contexto.fillStyle = "black";
+			contexto.fill();
+		tam3 = (tam3)/2;
+		tam4 = (tam4)/2;
+		y2 = (y2)+(aux2);
+		aux2 = (aux2)/2;
+		}
+	}
+	}
+
+	
+	 if(opcion==3)
+	{
+	var canvas = document.getElementById("Dibujar");
+	var contexto = canvas.getContext("2d");
+	var rep = prompt("Ingrese el numero de iteraciones: ");
+	
+	var x1 = 500/4;
+	var y1 = 500/4;
+	
+
+	
+	var x2 = 150/4; 
+	var y2 = 250/4; 
+	var aux1 = 175/4;
+	var aux2 = 125/4;
+	var tam1 = 500/4;
+	var tam2 = 700/4;
+	var tam3 = 350/4;
+	var tam4 = 500/4;
+	for(var i=1; i<=rep; i++)
+	{
+		if(i%2!= 0)
+		{
+		contexto.beginPath();
+			contexto.arc(x1, y1, tam1, 0, Math.PI*2);
+			contexto.fillStyle = "red";
+			contexto.fill();
+		contexto.beginPath();
+			contexto.rect(x2,x2,tam2,tam2);
+			contexto.fillStyle = "black";
+			contexto.fill();
+		tam1 = (tam1)/2;
+		tam2 = (tam2)/2;
+		x2 = (x2)+(aux1);
+		aux1 = (aux1)/2;
+		
+		}
+		else
+		{
+		contexto.beginPath();
+			contexto.arc(x1, y1, tam3, 0, Math.PI*2);
+			contexto.fillStyle = "red";
+			contexto.fill();
+		contexto.beginPath();
+			contexto.rect(y2,y2,tam4,tam4);
+			contexto.fillStyle = "black";
+			contexto.fill();
+		tam3 = (tam3)/2;
+		tam4 = (tam4)/2;
+		y2 = (y2)+(aux2);
+		aux2 = (aux2)/2;
+		}
+	}
+	}
+	</script>
+	</div>
+</body>
+</html>

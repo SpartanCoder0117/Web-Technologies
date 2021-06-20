@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>NUMERO PRIMO</title>
+        <script>
+	        var x,i,a=0;
+	        var X;
+	        X=window.prompt("Escriba un numero: \n","1");
+	        x=parseInt(X);
+	        for(i=1;i<=x;i++)
+            {
+    	        if(x%i==0) 
+                {
+   			        a++;
+		        }
+            }
+		    if(a==2)
+            {
+    		    document.writeln("El numero "+x+" es primo");
+		    }
+            else
+            {
+    		    document.writeln("El numero "+x+" no es primo"); 
+		    }
+        </script>
+	</head>
+</html>

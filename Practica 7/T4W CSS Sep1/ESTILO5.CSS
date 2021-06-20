@@ -1,0 +1,14 @@
+.imagen_fondo	{position: absoluta;
+						top: Opx;
+						left: Opx;
+						z-index: 1; }
+				.imagen_primerplano {position: absolute;
+						top: 2Spx;
+						left: lOOpx;
+						z-index: 2; }
+				.texto { position: absolute;
+						top: 50px;
+						left: lOOpx;
+						z-index: 3;
+						font-size: 20pt;
+						font-family: tahoma, geneva, sans-serif ; }

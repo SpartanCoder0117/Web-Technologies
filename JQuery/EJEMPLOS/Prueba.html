@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Imagenes</title>
+	<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.4.min.js"></script>
+</head>
+<body>
+	<div>
+		<button id="boton0">Ocultar</button>
+		<button id="boton1">Mostrar</button>
+		<button id="boton2">Toggle</button>
+		<button id="boton3">Cambiar Tamaño</button>
+		<button id="boton4">FadeOut</button>
+		<button id="boton5">FadeIn</button>
+		<button id="boton6">Mover</button>
+		<button id="boton7">Cambiar estilo CSS</button>
+		<button id="boton8">Tocar para ocultar</button>
+		<!--button id="boton9">Fondo amarillo</button>
+		<button id="boton10">Contador de caracteres</button>
+		<button id="boton11">Cargar contenido externo</button-->
+		<button id="boton12">Ocultar</button>
+		<button id="boton13">Ver codigo</button>
+		<button id="boton14">Version JQuery</button>
+		
+	</div><br>
+	<div>
+			<img id="imag" src="1.jpg" alt="" width="200" height="246">	
+			<img id="imag2" src="11.jpg" width="200" height="246">
+	</div><br>
+	<script>
+		//Ocultar
+		$("#boton0").click(function (){
+			$("#imag").hide("slow");
+		});
+		
+		//Mostrar
+		$("#boton1").click(function(){
+			$("#imag").show("slow");
+		});
+
+		//Mostrar/Ocultar
+		$("#boton2").click(function(){
+			$("#imag").toggle("slow");
+		});
+
+		//Cambiar tamaño
+		$("#boton3").click(function() {
+			$("#imag").animate({fontSize:'2.4em',width:400,padding:24}, 2500);
+		});
+
+		//Ocultar con FadeOut
+		$("#boton4").click(function() {
+			$("#imag").fadeToggle(3000);
+		});
+
+		//Mostrar con FadeIn
+		$("#boton5").click(function() {
+			$("#imag").fadeIn(3000);
+		});
+		
+		//Mover
+		$("#boton6").click(function(){
+	
+			$("#imag").animate({opacity: "0.1", left: "+=400",fontSize:'1em',width: "200"}, 1200)
+			.animate({opacity: "0.4", top: "+=160", height: "20", width: "80",fontSize:'0.5em'}, "slow")
+			.animate({opacity: "1", left: "0", width: "260"}, "slow")
+			.animate({top: "0",width: "260",fontSize:'1.2em'}, "fast")
+			.slideUp()
+			.slideDown(1800)
+			return false;
+		});
+
+		//Cambiar estilo CSS
+		$("#boton7").click(function() {
+			$("#imag").css({'border':'4px solid #b7e5ff','color':'#cc3333','font-weight':'bold','background-color':'#ffffff'});
+		});
+
+		//Toca para ocultarme
+		$("#boton8").click(function() {
+			$(this).hide().delay(1500).show(1500);
+		});	 
+
+		//Fondo amarillo
+		$(".yellow").hover(
+			function() { $(this).addClass("Hover"); },
+			function() { $(this).removeClass("Hover"); }
+		);		
+
+		//Contador de caracteres
+		$('textarea').keyup(updateCount);
+		$('textarea').keydown(updateCount);
+		function updateCount() {
+    		var cs = $(this).val().length;
+    		$('#characters').text(cs);
+		}
+
+		//Cargar contenido externo
+		$("#boton11").click(function() {
+			$("#noticias").load("../facebook/problemas-simbolos.php");
+		});
+
+		//Ocultar
+		$("#boton12").click(function() {
+			$("#imag2").hide(1500);
+		});
+
+		//GET (ver codigo fuente)
+		$("#boton13").click(function(){
+			$.get('file:///C:/Users/Imperio%20Remanente/Desktop/Trabajos%20Escom/Tecnologias%20para%20la%20web/JQuery/ejemplos/Prueba.html', function(data, status){
+        		alert("Data: " + data + "\nStatus: " + status);
+   			});
+		});
+
+		//Version de JQuery
+		$("#boton14").click(function() {
+		var version=$().jquery;
+		alert("Estas usando la versión: " +version+" de JQuery");
+		});
+
+	</script>
+</body>
+</html>
+

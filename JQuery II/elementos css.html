@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Selección de Elementos </title>
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+		<style>
+  p {
+    margin: 4px;
+    font-size: 16px;
+    font-weight: bolder;
+  }
+  .blue {
+    color: blue;
+  }
+  .under {
+    text-decoration: underline;
+  }
+  .highlight {
+    background: green;
+  }
+</style>
+	</head>
+	<body>
+	 
+		<h1>Header 1</h1>
+		<p>Contents 1</p>
+		<h2>Header 2</h2>
+		<p>Contents 2</p><br>
+		<form>
+			<input type="button" value="Input Button">
+			<input type="checkbox">
+			<input type="radio">
+			<input type="reset">
+			<input type="submit">
+			
+		</form><br><br>
+		<button id="head">HEADER</button>
+		<button id="ep">p:odd</button>
+		<button id="boton">BOTON</button>
+		<button id="chec">CHECKBOX</button>
+		<button id="rad">RADIO</button><br>
+		<p class="blue under">Hello</p>
+		<p class="blue under">and</p>
+		<p class="blue under">then</p>
+		<p class="blue under">Goodbye</p><br>
+		<button id="remc">REMOVECLASS</button>
+		<button id="togc">TOGGLECLASS</button>
+		<button id="adc">ADDCLASS</button>
+		<button id="hc">HASCLASS</button><br>
+		<div id="result1">Tiene highlight: </div>
+		<script>
+			$("#head" ).click(function() {
+				$( ":header" ).css({ background: "#ccc", color: "blue" });
+			});
+			$("#ep" ).click(function() {
+				$( "p:odd" ).css({ background: "#ccc", color: "blue" });
+			});
+
+
+var input = $( "form input:text" ).css({
+  background: "yellow",
+  border: "3px red solid"
+});
+ 
+
+ 
+// Prevent form submission
+$( "form" ).submit(function( event ) {
+  event.preventDefault();
+});
+
+
+			$("#boton" ).click(function() {
+				$( ":button" ).css({ background: "#ccc", color: "red" });
+			});
+			$("#chec" ).click(function() {
+				var input = $( "form input:checkbox" )
+				.wrap( "<span></span>" ).parent().css({
+					background: "yellow",
+					border: "3px red solid"
+				});
+			});
+			$("#checd" ).click(function() {
+				var input = $( "input:checked" )
+				.wrap( "<span></span>" ).parent().css({
+					background: "green",
+					border: "3px blue solid"
+				});
+			});
+			$("#rad" ).click(function() {
+				var input = $( "form input:radio" )
+				.wrap( "<span></span>" ).parent().css({
+					background: "yellow",
+					border: "3px red solid"
+				});
+			});
+			$("#remc" ).click(function() {
+				$( "p:even" ).removeClass( "blue" );
+				
+			});
+			$("#togc" ).click(function() {
+				$( "p" ).toggleClass( "blue" );
+				
+			});
+			$("#adc" ).click(function() {
+				$( "p:last" ).toggleClass( "highlight" );
+				
+			});
+			$("#hc" ).click(function() {
+				$( "#result1" ).append( $( "p:last" ).hasClass( "highlight" ).toString() );
+				
+			});
+		</script>
+	 
+	</body>
+</html>

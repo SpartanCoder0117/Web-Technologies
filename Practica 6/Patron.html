@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>Canvas</title>
+<script>
+var i= new Image();
+i.src="6.jpg";
+
+function iniciar(){
+var ca= document.getElementById("patron");
+var co= ca.getContext("2d");
+var pa= co.createPattern(i,"repeat");
+co.rect(5,5,385,200);
+co.fillStyle=pa;
+co.fill();
+}
+window.addEventListener("load",iniciar,false);
+</script>
+</head>
+
+<body>
+<canvas id="patron"
+ width="400" height="200"
+ style="border: 1px solid black";> 
+</canvas>
+</body>
+</html>

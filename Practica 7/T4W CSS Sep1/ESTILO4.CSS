@@ -1,0 +1,7 @@
+body	{font-family: arial, helvetica, sans-serif; }
+			a.nodec	{text-decoration: underline; }
+			a:hover	{text-decoration: bold; }
+			1i em	{font-weight: bold; }
+			h2, em	{text-decoration: underline; }
+			ul	{margin-left: 40px; }
+			ul ul	{font-size: .9em; }

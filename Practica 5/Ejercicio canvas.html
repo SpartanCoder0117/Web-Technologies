@@ -1,0 +1,35 @@
+<!--Ejemplos con canvas-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<title>Rectangulo con canvas</title>
+	</head>
+	<body>
+		<canvas id = "dibujarRectangulo"
+				width = "500" height = "500"
+				style = "border: 1px solid black;">
+		</canvas>
+		<script>
+			var canvas = document.getElementById("dibujarRectangulo");
+			var c = canvas.getContext("2d");
+			c.fillStyle = "yellow";
+			c.fillRect(10,20,200,200);
+			c.strokeStyle = "royalBlue";
+			c.lineWidth = 6;
+			c.strokeRect(9,19,200,200);
+		</script>
+		<canvas id = "dibujarArco"
+	   			width = "400";
+	   			height = "200">
+		</canvas>
+                <script>
+			var canvas = document.getElementById("dibujarArco");
+			var c = canvas.getContext("2d");
+			c.beginPath();
+			c.arc(30,50,30,0,Math.PI*2);
+			c.fillStyle = "mediumslateblue";
+			c.fill();
+		</script>
+	</body>
+</html>
